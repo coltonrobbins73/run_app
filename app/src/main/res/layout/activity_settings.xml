@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Settings"
+        >
+
+        <RelativeLayout
+            android:id="@+id/masterLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/logoutBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:backgroundTint="#FF044CDD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Log out" />
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logoutBtn"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="5dp"
+                android:text="Welcome"
+                android:layout_marginBottom="30dp"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logoutBtn"
+                android:layout_toEndOf="@+id/welcomeText"
+                android:layout_marginBottom="30dp"
+                android:text="Username"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/textPlaceHolderEmail"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/userName"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="45dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="30dp"
+                android:textSize="20sp"
+                android:text="Email" />
+
+            <TextView
+                android:id="@+id/textEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userName"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textPlaceHolderFirstName"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/textPlaceHolderEmail"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="45dp"
+                android:textSize="20sp"
+                android:text="First Name" />
+
+            <TextView
+                android:id="@+id/textFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"
+                android:layout_below="@id/textPlaceHolderEmail"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textPlaceHolderLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginEnd="45dp"
+                android:layout_below="@id/textPlaceHolderFirstName"
+                android:text="Last Name " />
+
+            <TextView
+                android:id="@+id/textLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textPlaceHolderFirstName"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textPlaceHolderAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="45dp"
+                android:layout_below="@id/textPlaceHolderLastName"
+                android:text="Age " />
+
+            <TextView
+                android:id="@+id/textAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textPlaceHolderLastName"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textPlaceHolderWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginEnd="45dp"
+                android:layout_below="@id/textPlaceHolderAge"
+                android:text="Weight" />
+
+            <TextView
+                android:id="@+id/textWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textPlaceHolderAge"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textPlaceHolderHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginEnd="45dp"
+                android:layout_below="@id/textPlaceHolderWeight"
+                android:text="Height" />
+
+            <TextView
+                android:id="@+id/textHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textPlaceHolderWeight"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textPlaceHolderCadence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="45dp"
+                android:layout_below="@id/textPlaceHolderHeight"
+                android:text="Goal " />
+
+            <TextView
+                android:id="@+id/textCadence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_below="@id/textPlaceHolderHeight"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="30dp"
+                android:text="No Cadence Goal" />
+
+
+            <Button
+                android:id="@+id/editProfileBtn"
+                android:layout_width="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:backgroundTint="#FF044CDD"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textCadence"
+                android:text="Edit Profile" />
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            app:backgroundTint="@android:color/transparent"
+            app:fabAlignmentMode="center"
+            app:fabCradleMargin="8dp"
+            app:fabCradleRoundedCornerRadius="30dp"
+            app:fabCradleVerticalOffset="10dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                app:menu="@menu/bottom_nav_menu" />
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/startWorkoutFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/start_icon"
+            app:backgroundTint="#28DA31"
+            app:fabCustomSize="64dp"
+            app:layout_anchor="@id/bottomAppBar"
+            app:maxImageSize="64dp" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

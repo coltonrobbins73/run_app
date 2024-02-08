@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">RhythmRun</string>
+    <string name="startWorkoutTitle">Run</string>
+    <string name="Start">Start</string>
+    <string name="sign_up_badge_tooltip">This is earned for creating an account!</string>
+    <string name="one_mile_badge_tooltip">This is earned for completing a 1 mile run!</string>
+    <string name="five_k_badge_tooltip">This is earned for completing a 5K run!</string>
+    <string name="ten_k_badge_tooltip">This is earned for completing a 10K run!</string>
+    <string name="half_marathon_badge_tooltip">This is earned for completing a half marathon!</string>
+    <string name="fifty_mile_badge_tooltip">This is earned for completing a 50 mile run!</string>
+
+    <string-array name="options">
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+    </string-array>
+
+
+    <style name="SpinnerItemStyle" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textSize">20sp</item> <!-- Set your desired text size here -->
+    </style>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

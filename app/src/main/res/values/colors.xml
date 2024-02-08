@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Red for when GPS is not ready -->
+    <color name="gps_status_not_ready">#FF0000</color>
+    <!-- Green for when GPS is ready -->
+    <color name="gps_status_ready">#00FF00</color>
+    <!-- Orange for pause button -->
+    <color name="pause">#FF6600</color>
+</resources>
