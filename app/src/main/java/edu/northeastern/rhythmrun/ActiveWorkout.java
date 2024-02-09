@@ -12,6 +12,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
+import android.os.Build;
 import android.os.Environment;
 import android.os.HandlerThread;
 import android.provider.Settings;
@@ -30,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -95,8 +97,9 @@ public class ActiveWorkout extends AppCompatActivity implements OnMapReadyCallba
 	private PolylineOptions polylineOptions = new PolylineOptions().width(10).color(Color.BLUE);
 	private Polyline polyline;
 
-	// for location permission
+	// for location  and post notification permission
 	private static final int REQUEST_LOCATION_PERMISSION = 1001;
+	private static final int REQUEST_NOTIFICATION_PERMISSION = 1002;
 
 	// for threads
 	private HandlerThread locationThread;
@@ -337,19 +340,44 @@ public class ActiveWorkout extends AppCompatActivity implements OnMapReadyCallba
 		return true;
 	}
 
+	// added post notification permission logics as it is required in the latest Android update
+	@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+	private boolean checkPostNotificationPermission() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+			if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+				ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.POST_NOTIFICATIONS }, REQUEST_NOTIFICATION_PERMISSION);
+				return false;
+			}
+		}
+		return true;
+	}
+
 	// Handle the result of permission requests
 	@Override
 	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+		// Handle location permission request result
 		if (requestCode == REQUEST_LOCATION_PERMISSION) {
 			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				// Permission granted, proceed with location updates or whatever you need
+				// Location permission granted, proceed with location updates or whatever you need
 				onResume();
 			} else {
-				// Permission denied, show rationale or redirect
+				// Location permission denied, show rationale or redirect
 				handlePermissionDenied();
 			}
 		}
+		// Handle notification permission request result
+		else if (requestCode == REQUEST_NOTIFICATION_PERMISSION) {
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				// Notification permission was granted. You can now perform actions that require this permission.
+				onResume();
+			} else {
+				// Notification permission was denied. Handle the feature or functionality that depends on this permission accordingly.
+				handlePermissionDenied();
+			}
+		}
+		// Add additional else-if blocks for handling other permission requests
 	}
 
 	private void handlePermissionDenied() {
